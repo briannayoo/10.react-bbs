@@ -12,7 +12,7 @@ function Write({boardId, handleCancle, isModifyMode}){
   const navigate = useNavigate();
 
   let write = () =>{
-    Axios.post('34.64.62.209:8000/insert',{
+    Axios.post('http://localhost:8000/insert',{
       title: this.state.title,
       content: this.state.content
     })
@@ -26,7 +26,7 @@ function Write({boardId, handleCancle, isModifyMode}){
   }
 
   let update = () =>{
-    Axios.post('34.64.62.209:8000/update',{
+    Axios.post('http://localhost:8000/update',{
       id:boardId,
       title: form.title,
       content: form.content
@@ -49,7 +49,7 @@ function Write({boardId, handleCancle, isModifyMode}){
   }
 
   let detail = () =>{
-    Axios.get(`34.64.62.209:8000/detail?id=${boardId}`)
+    Axios.get(`http://localhost/detail?id=${boardId}`)
     .then( res => {
       if(res.data.length > 0){
         setForm({
